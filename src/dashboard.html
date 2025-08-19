@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>IDS Client - Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- ADDED: Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <i data-lucide="shield-check"></i>
+                <h2>IDS Client</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active">
+                    <i data-lucide="layout-dashboard"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="bell-ring"></i>
+                    <span>Alerts</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="settings"></i>
+                    <span>Settings</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                 <a href="#" class="nav-item">
+                    <i data-lucide="log-out"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Dashboard Overview</h1>
+                <div class="controls">
+                    <label for="mode-select">Prediction Source:</label>
+                    <select id="mode-select">
+                        <option value="local">Local Model</option>
+                        <option value="cloud">Cloud API</option>
+                    </select>
+                    <button id="toggle-btn">
+                        <i data-lucide="play"></i>
+                        <span>Start Monitoring</span>
+                    </button>
+                </div>
+            </header>
+            <div class="charts-grid">
+                <div class="chart-container">
+                    <h3>Traffic by Protocol</h3>
+                    <canvas id="protocol-chart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Threats Over Time</h3>
+                    <canvas id="threats-chart"></canvas>
+                </div>
+            </div>
+            <div class="logs-container">
+                <h2>Detection Logs</h2>
+                <div id="log-area"></div>
+            </div>
+        </main>
+    </div>
+    <script src="./renderer.js"></script>
+    <!-- ADDED: Script to activate icons -->
+    <script>
+      lucide.createIcons();
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>IDS Client - Login</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <canvas id="background-canvas"></canvas> <!-- ADDED CANVAS -->
+    <div class="login-container">
+        <h2>Client Login</h2>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password">
+        </div>
+        <button id="login-btn">Login</button>
+        <p id="error-message" class="error"></p>
+        <p class="sub-text">Don't have an account? <a href="#" id="signup-link">Sign Up</a></p>
+    </div>
+    <script src="./background.js"></script> <!-- ADDED SCRIPT -->
+    <script src="./loginRenderer.js"></script>
+</body>
+</html>
